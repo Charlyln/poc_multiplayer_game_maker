@@ -48,9 +48,10 @@ create_bullet = function (player) {
 	for (var i = 0; i < instance_number(obj_player); ++i) {
 		player_instanceid = instance_find(obj_player, i);
 		if (player_instanceid.player_id == player.id && player.id != client_id) {
-			bullet = instance_create_layer(player.x, player.y, "BulletsLayer", obj_bullet);
-			//bullet.direction = player.x;
-			//bullet = player.y;
+			bullet = instance_create_layer(player.x, player.y, "BulletsLayer", obj_bullet_other);
+			bullet_direction = point_direction(player.x, player.y, player.mouse_x, player.mouse_y);
+			bullet.direction = bullet_direction
+			bullet.image_angle = bullet.direction
 			show_debug_message("create_bullet");
 		}
 	}

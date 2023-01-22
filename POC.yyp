@@ -25,6 +25,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
     {"id":{"name":"Object5","path":"objects/Object5/Object5.yy",},"order":5,},
     {"id":{"name":"obj_multiplayer_client","path":"objects/obj_multiplayer_client/obj_multiplayer_client.yy",},"order":1,},
+    {"id":{"name":"obj_bullet_other","path":"objects/obj_bullet_other/obj_bullet_other.yy",},"order":1,},
     {"id":{"name":"uuid_array_implode","path":"scripts/uuid_array_implode/uuid_array_implode.yy",},"order":3,},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},"order":0,},
   ],
