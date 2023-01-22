@@ -1,6 +1,6 @@
 function send_to_server(data){
 	
-	buffer = buffer_create(100, buffer_fixed, 100);
+	buffer = buffer_create(200, buffer_fixed, 200);
 	json_data = json_encode(data)
 	ds_map_destroy(data)
 

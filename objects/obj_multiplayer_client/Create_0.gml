@@ -14,6 +14,8 @@ drop_player = function(player) {
 		//show_debug_message(player_instance_id)
 		new_player.is_other_player = true
 		new_player.player_id = player.id
+		new_player.color = player.color
+		new_player.player_name = player.name
 		show_debug_message("other player drop")
 	}
     
@@ -62,6 +64,9 @@ ds_map_add(connect_data, "id", client_id)
 ds_map_add(connect_data, "event", "connect")
 ds_map_add(connect_data, "x", player_x)
 ds_map_add(connect_data, "y", player_y)
+ds_map_add(connect_data, "name", string(global.player_name))
+show_debug_message(global.player_name)
+ds_map_add(connect_data, "color", global.player_color)
 send_to_server(connect_data)
 
 #endregion

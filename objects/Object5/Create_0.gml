@@ -1,9 +1,10 @@
 colors = [
-	c_black,
-	c_navy,
-	c_orange,
-	c_green,
-	c_maroon
+	0,
+	83858608,
+	8388608,
+	4235519,
+	32768,
+	128
 ]
 
 
