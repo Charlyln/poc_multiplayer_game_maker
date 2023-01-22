@@ -1,4 +1,3 @@
-/// @description uuid_generate()
 function uuid_generate() {
 	var d = current_time + epoch() * 10000, uuid = array_create(32), i = 0, r;
 

@@ -11,13 +11,15 @@ if (async_load[? "size"] > 0) {
 {
     case "connect":
 	//other_players = parsed.players
-    create_new_player(parsed.players)
+    create_new_players(parsed.players)
     break;
 
     case "move":
+	move_player(parsed.player)
          break;
 		 
 		  case "disconnect":
+		   destroy_player(parsed.player)
          break;
     
 }

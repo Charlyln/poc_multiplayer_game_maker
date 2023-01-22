@@ -1,15 +1,15 @@
 #region // player_move
 
-if (obj_player.x != player_x || obj_player.y != player_y) {
+if (global.instance_id.x != player_x || global.instance_id.y != player_y) {
 	
-	player_x = obj_player.x
-	player_y = obj_player.y
+	player_x = global.instance_id.x
+	player_y = global.instance_id.y
 	data = ds_map_create()
 
 	ds_map_add(data, "id", client_id)
 	ds_map_add(data, "event", "move")
-	ds_map_add(data, "x", obj_player.x)
-	ds_map_add(data, "y", obj_player.y)
+	ds_map_add(data, "x", global.instance_id.x)
+	ds_map_add(data, "y", global.instance_id.y)
 
 	send_to_server(data)
 	

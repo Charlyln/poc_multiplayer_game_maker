@@ -2,24 +2,63 @@
 
 //network_connect_raw(global.client, global.address, global.port);
 
-client_id = uuid_generate()
-player_x = obj_player.x
-player_y = obj_player.y
-other_players = []
+client_id = global.player_id
+player_x = global.instance_id.x
+player_y = global.instance_id.y
 
-create_new_player = function(players) {
-	
-	show_debug_message(players[0].x)
-	
-	
-    instance_create_layer(players[0].x +100, players[0].y+100, "lyr_instances", obj_other_player)
+
+
+drop_player = function(player) {
+	if (player.id != client_id) {
+		new_player = instance_create_layer(player.x, player.y, "lyr_instances", obj_player)
+		//show_debug_message(player_instance_id)
+		new_player.is_other_player = true
+		new_player.player_id = player.id
+	}
+    
 }
+
+move_player = function(player) {
+for (var i = 0; i < instance_number(obj_player); ++i;)
+{
+    player_instanceid = instance_find(obj_player,i);
+	show_debug_message(player_instanceid.player_id)
+	if (player_instanceid.player_id == player.id) {
+		player_instanceid.x = player.x
+		player_instanceid.y = player.y
+	}
+}
+    
+}
+
+destroy_player = function(player) {
+for (var i = 0; i < instance_number(obj_player); ++i;)
+{
+    player_instanceid = instance_find(obj_player,i);
+	show_debug_message(player_instanceid.player_id)
+	if (player_instanceid.player_id == player.id) {
+		instance_destroy(player_instanceid)
+	}
+}
+    
+}
+
+
+
+create_new_players = function(players) {
+    array_foreach(players, drop_player);
+}
+
+
+
+
+
 
 connect_data = ds_map_create()
 ds_map_add(connect_data, "id", client_id)
 ds_map_add(connect_data, "event", "connect")
-ds_map_add(connect_data, "x", obj_player.x)
-ds_map_add(connect_data, "y", obj_player.y)
+ds_map_add(connect_data, "x", player_x)
+ds_map_add(connect_data, "y", player_y)
 send_to_server(connect_data)
 
 #endregion
