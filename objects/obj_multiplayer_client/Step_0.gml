@@ -1,6 +1,6 @@
 #region // player_move
 
-if (global.instance_id.x != player_x || global.instance_id.y != player_y) {
+if (global.instance_id.is_moving) {
 	
 	player_x = global.instance_id.x
 	player_y = global.instance_id.y
