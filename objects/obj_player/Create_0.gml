@@ -1,10 +1,10 @@
 #region // basics
 
-move_speed = 2
+move_speed = 1
 is_moving = false
 is_other_player = false
 
-
+image_blend = global.player_color;
 
 
 

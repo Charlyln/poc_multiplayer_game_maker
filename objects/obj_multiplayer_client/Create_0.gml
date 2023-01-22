@@ -14,6 +14,7 @@ drop_player = function(player) {
 		//show_debug_message(player_instance_id)
 		new_player.is_other_player = true
 		new_player.player_id = player.id
+		show_debug_message("other player drop")
 	}
     
 }
@@ -23,9 +24,10 @@ for (var i = 0; i < instance_number(obj_player); ++i;)
 {
     player_instanceid = instance_find(obj_player,i);
 	show_debug_message(player_instanceid.player_id)
-	if (player_instanceid.player_id == player.id) {
+	if (player_instanceid.player_id == player.id && player.id != client_id) {
 		player_instanceid.x = player.x
 		player_instanceid.y = player.y
+		show_debug_message("other player is moving")
 	}
 }
     
@@ -38,6 +40,7 @@ for (var i = 0; i < instance_number(obj_player); ++i;)
 	show_debug_message(player_instanceid.player_id)
 	if (player_instanceid.player_id == player.id) {
 		instance_destroy(player_instanceid)
+		show_debug_message("other player destroyed")
 	}
 }
     
