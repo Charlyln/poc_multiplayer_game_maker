@@ -32,14 +32,24 @@ if (!is_other_player) {
 
 			send_to_server(data)
 		}
+		
+		
 
 		if (bullet_in_magazine < 1 && !reloading) {
 			alarm[0] = 20;
 			reloading = true;
 		}
 	} 
+	
+	if (shoot) {
+		sprite_index = spr_player_dying
+	} else {
+		sprite_index = spr_player
+	}
 
 	cooldown -= 1;
+	
+	
 }
 
 

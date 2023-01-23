@@ -1,7 +1,5 @@
 #region // connect
 
-//network_connect_raw(global.client, global.address, global.port);
-
 client_id = global.player_id
 player_x = global.instance_id.x
 player_y = global.instance_id.y
@@ -10,7 +8,6 @@ player_y = global.instance_id.y
 drop_player = function (player) {
 	if (player.id != client_id) {
 		new_player = instance_create_layer(player.x, player.y, "lyr_instances", obj_player);
-		//show_debug_message(player_instance_id)
 		new_player.is_other_player = true;
 		new_player.player_id = player.id;
 		new_player.color = player.color;
@@ -19,7 +16,7 @@ drop_player = function (player) {
 	}
 };
 
-move_player = function (player) {
+function move_player(player) {
 	for (var i = 0; i < instance_number(obj_player); ++i) {
 		player_instanceid = instance_find(obj_player, i);
 		show_debug_message(player_instanceid.player_id);

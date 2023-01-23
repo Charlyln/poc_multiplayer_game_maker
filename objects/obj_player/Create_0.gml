@@ -3,6 +3,7 @@
 move_speed = 1
 is_moving = false
 is_other_player = false
+dying = false
 
 color = c_black
 cooldown = 0

@@ -12,21 +12,9 @@ colors = [
 
 create_button = function(color, index) {
 	
-	new_instance = instance_create_layer(x + index * 100,y, "Instances", obj_start)
+	new_instance = instance_create_layer(x + index * 100,y, "Instances", obj_button)
 	new_instance.color = color
     
 }
 
 array_foreach(colors, create_button);
-
-
-
-
-
-
-
-
-
-
-
-
